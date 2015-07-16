@@ -1,0 +1,21 @@
+<div>
+	<%= link_to 'Nuevo articulo', new_article_path %>
+</div>
+<% @articles.each do |article| %>
+	<div class="span12 article-show">
+		<div class="span5">
+			<h1><%= article.title %></h1>
+			<div>
+				<%= article.text %>
+			</div>
+		</div>
+		<div class="span5 buttons">
+			<div class="span1"><%= link_to 'Ver', article_path(article) %></div>
+			<div class="span1"><%= link_to 'Editar', edit_article_path(article) %></div>
+			<div class="span1"><%= link_to "Eliminar", article, method: :delete %></div>
+			
+		</div>
+
+	</div>
+
+<% end %>
